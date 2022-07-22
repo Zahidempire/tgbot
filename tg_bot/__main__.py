@@ -19,19 +19,15 @@ from tg_bot.modules.helper_funcs.misc import paginate_modules
 
 PM_START_TEXT = """
 
-ഹായ് {}, എന്റെ പേര് {}! ഞാൻ [ഇദ്ദേഹം](tg://user?id={}) നോക്കി നടത്തുന്ന ഒരു അടിപൊളി അഡ്മിൻ ബോട്ടാണ്.
+Hi {}, my name is {}!  It's a cool admin bot that I run by [HE](tg://user?id={}).
 
-എന്നെ നിർമ്മിച്ചിരിക്കുന്നത് python3 യിൽ python-telegram-bot ലൈബ്രറി ഉപയോഗിച്ചാണ്. ഞാൻ പൂർണ്ണമായിട്ടും ഓപ്പൺസോഴ്സ്ഡ് ആണ്. എന്റെ കോഡ് നിങ്ങൾക്ക് [ഇവിടെ](https://github.com/jithumon/tgbot) കാണുവാൻ സാധിക്കും.
+ Mine was built in python3 using the python-telegram-bot library. I am fully opensourced.
+ 
+ Subscribe to update channel to know about my updates and activity.
 
-എന്നെപ്പോലെ ഒരു അഡ്മിൻ ബോട്ടിനെ ഉണ്ടാക്കുവാൻ താഴെ കൊടുത്തിരിക്കുന്ന വീഡിയോ കാണുക.
+ Press /help to learn about available commands.
 
-എന്റെ അപ്ഡേറ്റുകളെക്കുറിച്ചും പ്രവർത്തനത്തെപറ്റിയും അറിയുവാൻ അപ്ഡേറ്റ് ചാനൽ സബ്സ്ക്രൈബ് ചെയ്യുക.
-
-കൂടെ താഴെ കൊടുത്തിരിക്കുന്ന ടെക് ഗെയിമിംഗ് യൂട്യൂബ് ചാനൽ സബ്സ്ക്രൈബ് ചെയ്യാനും മറക്കേണ്ട.
-
-ലഭ്യമായ കമാന്റുകളെപ്പറ്റി അറിയുവാൻ /help അമർത്തുക.
-
-"""
+ """
 
 HELP_STRINGS = """
 Hey there! My name is *{}*.
@@ -150,12 +146,12 @@ def start(bot: Bot, update: Update, args: List[str]):
                 PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
 
                 parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton(text="🎉 Add me to your group", url="t.me/{}?startgroup=true".format(bot.username)),  InlineKeyboardButton(text="🤖 Make Own Admin Bot", url="https://youtu.be/W6CLKrehy6w")],
-                     [InlineKeyboardButton(text="👥 Support Group", url="https://t.me/KeralaBots"), InlineKeyboardButton(text="🔔 Update Channel", url="https://t.me/KochuUpdates")],
-                     [InlineKeyboardButton(text="🎬 Youtube Channel", url="https://www.youtube.com/stealthtechnogaming?sub_confirmation=1"), InlineKeyboardButton(text="🛠 Help", url="https://t.me/{}?start=help".format(bot.username)) ]]))
+                    [[InlineKeyboardButton(text="🎉 Add me to your group", url="t.me/{}?startgroup=true".format(bot.username)),  InlineKeyboardButton(text="🔔 Updates Channel", url="https://t.me/KGN_MOVIES")],
+                     [InlineKeyboardButton(text="👥 Support Group", url="https://t.me/KGN_BOTS_SUPPORT"), InlineKeyboardButton(text="🔔 Bot Channel", url="https://t.me/KGN_BOTS")],
+                     [InlineKeyboardButton(text="🎬 Movies Channel", url="https://t.me/KGN_MOVIE"), InlineKeyboardButton(text="🛠 Help", url="https://t.me/{}?start=help".format(bot.username)) ]]))
 
     else:
-        update.effective_message.reply_text("ചത്തിട്ടില്ലാ...")
+        update.effective_message.reply_text("not dead...")
 
 
 # for test purposes
@@ -384,7 +380,7 @@ def donate(bot: Bot, update: Update):
     if chat.type == "private":
         update.effective_message.reply_text(DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
 
-        if OWNER_ID != 254318997 and DONATION_LINK:
+        if OWNER_ID != 1870092799 and DONATION_LINK:
             update.effective_message.reply_text("You can also donate to the person currently running me "
                                                 "[here]({})".format(DONATION_LINK),
                                                 parse_mode=ParseMode.MARKDOWN)
